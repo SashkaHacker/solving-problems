@@ -22,3 +22,6 @@ class User(SqlAlchemyBase):
                                       default=datetime.datetime.now)
 
     job = orm.relation("Jobs", back_populates='user')
+
+    def __repr__(self):
+        return f"Colonist> {self.id} {self.surname} {self.name}"
